@@ -1,0 +1,27 @@
+#!/bin/sh
+
+echo "-----> Start compilation"
+
+cd $1
+
+echo "-----> In Folder"
+
+sudo apt update
+
+echo "-----> Update"
+
+sudo apt install dotnet-sdk
+
+echo "-----> Install dotnet"
+
+dotnet restore
+
+echo "-----> restore"
+
+dotnet build
+
+echo "-----> build"
+
+dotnet publish -c Release -o publish
+
+echo "-----> publish"
